@@ -4,7 +4,11 @@ android {
     compileSdkVersion 26
 
     defaultConfig {
-        minSdkVersion 19
+        // Min SDK version is for Nexus 5 is 23
+        // Moto E4 (only 5 GHz FTC phone) runs Android 7.1 Nougat
+        // Which corresponds to targetSDK version 25
+        //noinspection ExpiredTargetSdkVersion
+        minSdkVersion 24
         targetSdkVersion 26
         versionCode 34
         versionName "5.2"
