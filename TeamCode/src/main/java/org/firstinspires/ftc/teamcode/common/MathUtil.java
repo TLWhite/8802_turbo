@@ -4,7 +4,7 @@ import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.acmerobotics.roadrunner.geometry.Vector2d;
 
 public class MathUtil {
-    private static final double EPSILON = 1e-6;
+    public static final double EPSILON = 1e-6;
 
     public static double angleWrap(double angle) {
         double negTauToTau = angle % (Math.PI * 2);
@@ -44,7 +44,12 @@ public class MathUtil {
     }
 
     public static boolean approxEquals(double d1, double d2) {
-        return Math.abs(d1 - d2) < EPSILON;
+        if (Double.isInfinite(d1)) {
+            // Infinity - infinity is NaN, so we need a special case
+            return d1 == d2;
+        } else {
+            return Math.abs(d1 - d2) < EPSILON;
+        }
     }
 }
 
