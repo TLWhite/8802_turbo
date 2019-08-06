@@ -116,6 +116,9 @@ public class StandardTrackingWheelLocalizer {
     public Point pos() {
         return new Point(currentPosition.x, currentPosition.y);
     }
+    public Pose pose() {
+        return new Pose(currentPosition.x, currentPosition.y, currentPosition.heading);
+    }
 
 }
 
