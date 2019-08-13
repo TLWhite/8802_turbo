@@ -6,8 +6,8 @@ public class SixWheelPowers {
     public double left;
     public double right;
 
-    public SixWheelPowers(double dX, double dTheta) {
-        this.left = MathUtil.clamp(dX + dTheta);
-        this.right = MathUtil.clamp(dX + dTheta);
+    public SixWheelPowers(double left, double right) {
+        this.left = left;
+        this.right = right;
     }
 }
